@@ -1,0 +1,17 @@
+ 
+# Import DAC chip library
+from DAH import MCP4922
+import time
+
+#List of voltages
+Voltages=[1,1.5,2,2.5,3]
+
+# Define DAC as SPI chip 1 (CE1/GPIO7)
+DAC1 = MCP4922( chip=1 )
+
+# Output 1.3V on channel 0 of DAC1
+for i in range(len(Voltages)):
+		DAC1.analogWriteVolt( 0,Voltages[i])
+		print(Voltages[i])
+		time.sleep(2)
+		

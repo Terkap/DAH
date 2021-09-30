@@ -1,0 +1,1 @@
+The voltage of DAC1 channel is: 1The voltage of LDR is: 2.710915750915751The voltage of DAC1 channel is: 1.5The voltage of LDR is: 2.7205860805860804The voltage of DAC1 channel is: 2The voltage of LDR is: 2.713333333333333The voltage of DAC1 channel is: 2.5The voltage of LDR is: 2.756043956043956The voltage of DAC1 channel is: 3The voltage of LDR is: 2.726227106227106
