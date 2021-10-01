@@ -2,22 +2,21 @@
 # Import ADC and DAH chip library
 from DAH import MCP4922
 from DAH import MCP3208
+
 import time
 
 #List of voltages
 Voltages=[1,1.5,2,2.5,3]
 
-# Define DAC as SPI chip 1 (CE1/GPIO7) Define ADC as SPI chip 0 (CE0/GPIO8) 
+# Define DAC as SPI chip 1 (CE1/GPIO7) and define ADC as SPI chip 0 (CE0/GPIO8) 
 ADC0 = MCP3208( chip=0 )
 DAC1 = MCP4922( chip=1 )
 
 f =open("LDR and ADC vlotages.txt", 'w')
 
-# Output 1.3V on channel 0 of DAC1
+# Setting outputs on channel 0 of DAC1
 for i in range(len(Voltages)):
 		DAC1.analogWriteVolt( 0,Voltages[i])
-		print('The voltage of DAC1 channel is: '+str(Voltages[i]))
-		print(ADC0.analogReadVolt(0))
 		f.write(f'The voltage of DAC1 channel is: {Voltages[i]}')
 		f.write(f'The voltage of LDR is: {ADC0.analogReadVolt(0)}')
 		time.sleep(2)
